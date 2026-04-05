@@ -1,0 +1,259 @@
+{
+  "info": {
+    "_postman_id": "b8a410d0-29a5-42bc-9852-aa0b04f625e4",
+    "name": "Finance Backend APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53749361",
+    "_collection_link": "https://go.postman.co/collection/53749361-b8a410d0-29a5-42bc-9852-aa0b04f625e4?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Admin User\",\n  \"email\": \"admin@test.com\",\n  \"password\": \"123456\",\n  \"role\": \"Admin\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/users/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "users", "register"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"admin@test.com\",\n  \"password\": \"123456\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/users/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "users", "login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Record",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <your_token>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"amount\": 5000,\n  \"type\": \"income\",\n  \"category\": \"Salary\",\n  \"date\": \"2026-04-01\",\n  \"notes\": \"Monthly salary\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/records",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "records"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Records",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <your_token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/records",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "records"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filter Records (Income)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <your_token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/records?type=income",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "records"],
+          "query": [
+            {
+              "key": "type",
+              "value": "income"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filter Records (Category)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <your_token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/records?category=Food",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "records"],
+          "query": [
+            {
+              "key": "category",
+              "value": "Food"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filter Combined",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <your_token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/records?type=income&category=Salary",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "records"],
+          "query": [
+            {
+              "key": "type",
+              "value": "income"
+            },
+            {
+              "key": "category",
+              "value": "Salary"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Record",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <your_token>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"amount\": 6000,\n  \"notes\": \"Updated\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/records/3",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "records", "3"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Record",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <your_token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/records/7",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "records", "7"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dashboard",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <your_token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/records/dashboard",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "records", "dashboard"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
