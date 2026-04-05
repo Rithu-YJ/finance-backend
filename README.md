@@ -60,7 +60,8 @@ This demonstrates backend aggregation logic beyond basic CRUD operations.
 - Node.js
 - Express.js
 - Sequelize ORM
-- SQLite (lightweight and easy to set up)
+- SQLite (used during development for simplicity)
+- PostgreSQL (used in deployment for stability and persistence)
 - JSON Web Tokens (JWT) for authentication
 
 ---
@@ -149,7 +150,7 @@ postman_collection.json
 ### Steps:
 
 1. Import the collection into Postman
-2. Run the backend locally
+2. Run the backend locally or use deployed API
 3. Call Login API and copy token
 4. Replace `<your_token>` in headers
 5. Test all endpoints
@@ -158,11 +159,12 @@ postman_collection.json
 
 ## 📌 Design Decisions & Assumptions
 
-- SQLite is used for simplicity and easy local setup
+- SQLite was used initially for simplicity and fast local development
+- PostgreSQL was introduced for deployment to ensure data persistence and stability
+- Sequelize ORM enables database flexibility and easy migration between databases
 - JWT enables stateless authentication
 - Role-based access is handled via middleware
 - API-first approach (no frontend included)
-- Access is restricted based on user roles
 
 ---
 
@@ -172,6 +174,7 @@ postman_collection.json
 - Proper implementation of role-based access control
 - Structured and scalable API design
 - Real-world financial data handling logic
+- Smooth migration from SQLite to PostgreSQL using ORM
 - Fully testable using Postman collection
 
 ---
@@ -182,10 +185,10 @@ postman_collection.json
 - Advanced search functionality
 - Swagger/OpenAPI documentation
 - Rate limiting and security enhancements
-- Deployment with public API access
+- Enhanced analytics (monthly trends, recent activity)
 
 ---
 
 ## 🙌 Final Note
 
-This project focuses on building a reliable and well-structured backend system with clear business logic and access control. It reflects practical backend development skills and a structured engineering approach.
+This project focuses on building a reliable and well-structured backend system with clear business logic and access control. It reflects practical backend development skills, adaptability in handling deployment challenges, and a structured engineering approach.

@@ -2,9 +2,10 @@
 const { Sequelize } = require("sequelize");
 
 // Create database connection
-const sequelize = new Sequelize({
-  dialect: "sqlite", // Type of database
-  storage: "./database.sqlite", // File where data will be stored
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: "postgres", // Type of database
+  protocol: "postgres",
+  logging: false,
 });
 
 // Export connection
