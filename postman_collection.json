@@ -22,10 +22,8 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3000/api/users/register",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
+          "raw": "{{base_url}}/api/users/register",
+          "host": ["{{base_url}}"],
           "path": ["api", "users", "register"]
         }
       },
@@ -46,10 +44,8 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3000/api/users/login",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
+          "raw": "{{base_url}}/api/users/login",
+          "host": ["{{base_url}}"],
           "path": ["api", "users", "login"]
         }
       },
@@ -75,10 +71,8 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3000/api/records",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
+          "raw": "{{base_url}}/api/records",
+          "host": ["{{base_url}}"],
           "path": ["api", "records"]
         }
       },
@@ -95,10 +89,8 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3000/api/records",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
+          "raw": "{{base_url}}/api/records",
+          "host": ["{{base_url}}"],
           "path": ["api", "records"]
         }
       },
@@ -115,10 +107,8 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3000/api/records?type=income",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
+          "raw": "{{base_url}}/api/records?type=income",
+          "host": ["{{base_url}}"],
           "path": ["api", "records"],
           "query": [
             {
@@ -141,10 +131,8 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3000/api/records?category=Food",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
+          "raw": "{{base_url}}/api/records?category=Food",
+          "host": ["{{base_url}}"],
           "path": ["api", "records"],
           "query": [
             {
@@ -167,10 +155,8 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3000/api/records?type=income&category=Salary",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
+          "raw": "{{base_url}}/api/records?type=income&category=Salary",
+          "host": ["{{base_url}}"],
           "path": ["api", "records"],
           "query": [
             {
@@ -206,10 +192,8 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3000/api/records/3",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
+          "raw": "{{base_url}}/api/records/3",
+          "host": ["{{base_url}}"],
           "path": ["api", "records", "3"]
         }
       },
@@ -226,10 +210,8 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3000/api/records/7",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
+          "raw": "{{base_url}}/api/records/7",
+          "host": ["{{base_url}}"],
           "path": ["api", "records", "7"]
         }
       },
@@ -246,14 +228,38 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3000/api/records/dashboard",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
+          "raw": "{{base_url}}/api/records/dashboard",
+          "host": ["{{base_url}}"],
           "path": ["api", "records", "dashboard"]
         }
       },
       "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": ""
     }
   ]
 }
